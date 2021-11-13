@@ -1,0 +1,173 @@
+.sidebar {
+  background: $color-1;
+  font-family: $font-1;
+  height: 100%;
+  min-height: $minHeight;
+  min-width: 264px;
+  border-radius: $borderRadius;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px 1fr 108px;
+  grid-template-areas:
+    "1"
+    "2"
+    "3"
+    "4";
+
+  .id {
+    margin-left: 20px;
+    user-select: none;
+    position: relative;
+
+    .idContent {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+
+      img {
+        margin-bottom: 5px;
+        margin-left: 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px $color-3, 0 0 0 8px $color-4, 0 0 0 12px $color-2;
+      }
+      h3 {
+        margin-bottom: 40px;
+
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-top: 1.5rem;
+        color: $color-5;
+      }
+    }
+  }
+  .navigation {
+    padding: 2rem 1rem 1rem;
+    margin-top: 210px;
+
+    ul {
+      height: 100%;
+      display: grid;
+
+      li {
+        padding: 0.9rem 2rem 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+
+        &:hover i {
+          transform: translate(3px, 3px);
+        }
+
+        a {
+          color: $color-5;
+        }
+        .navActive {
+          color: $color-4;
+        }
+
+        i {
+          position: absolute;
+          font-size: 0.95rem;
+          transform: translateY(3px);
+          transition: 0.2s ease;
+        }
+        span {
+          margin-left: 2.7rem;
+        }
+      }
+    }
+  }
+  .socialNetwork {
+    ul {
+      display: flex;
+      width: 230px;
+      padding: 5px 5px 5px;
+      justify-content: space-around;
+
+      li {
+        font-size: 1.5rem;
+        background: $color-5;
+        color: $color-1;
+        border-radius: 50%;
+        padding: 0.5rem 0.8rem;
+        transition: 0.3s;
+        cursor: pointer;
+
+        a:visited {
+          color: $color-1;
+        }
+        &:nth-child(1) {
+          padding: 0.5rem 0.85rem;
+        }
+        &:nth-child(4) {
+          padding: 0.5rem 0.75rem;
+        }
+        &:hover {
+          background: $color-4;
+        }
+      }
+    }
+    .signature {
+      margin-top: 2rem;
+      text-align: center;
+      letter-spacing: 0.1rem;
+      font-size: 0.7rem;
+
+      p,
+      p:visited {
+        color: $color-5;
+
+        &:hover {
+          color: $color-4;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .sidebar {
+    display: flex;
+    min-height: 50px;
+    margin-bottom: 0.2rem;
+    width: 100%;
+
+    .id .socialNetwork {
+      display: none;
+    }
+    .navigation {
+      display: flex;
+      width: 100%;
+      padding: 0.7rem 1.5rem 1.2rem;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 560px) {
+  .sidebar {
+    ul {
+      justify-content: space-between;
+
+      li {
+        padding: 1rem;
+      }
+      i {
+        font-size: 1.4rem;
+        transform: translateX(-3px);
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}
